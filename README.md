@@ -2,7 +2,8 @@
 
 ![Resources](Resources/streaming.jpg)
 
-Our project looks at the ETL process of the top video streaming services.  We aim to create a database with (4) tables, each consisting of movies and shows from popular platforms such as Amazon Prime, Disney Plus, and Netflix.  Since these providers are competing entities, our objective is to load this data into one database and have the ability to run queries across each.
+Our project looks at the ETL process of the top video streaming services.  We aim to create a database with (4) tables, each consisting of television shows from popular platforms such as Amazon Prime, Disney Plus, Hulu, and Netflix.  Since each provider has different titles with little to no overlap, our objective is to create a relational database for those who are subscribed to all of them to have the ability to run queries with specified parameters to find something to watch and where. 
+
 
 ## Team
 Our team members:
@@ -14,11 +15,10 @@ Our team members:
 ## Extract
 Original Data Sources:
 
-1.	Amazon Prime TV Shows:  https://www.kaggle.com/nilimajauhari/amazon-prime-tv-shows
-2.	Amazon Prime Movies:  https://www.kaggle.com/padhmam/amazon-prime-movies
-3.  Disney Plus Shows:  https://www.kaggle.com/unanimad/disney-plus-shows
-4.  Netflix Shows:  https://raw.githubusercontent.com/datacamp/community-groupby/master/data/chasewillden-netflix-shows/data/netflix.csv
-5.  Netflix Movies and TV Shows:  https://www.kaggle.com/shivamb/netflix-shows
+1.  Amazon Prime TV Shows:  https://www.kaggle.com/nilimajauhari/amazon-prime-tv-shows
+2.  Disney Plus Shows:  https://www.kaggle.com/unanimad/disney-plus-shows
+4.  Hulu:  https://data.world/chasewillden/top-1-000-most-popular-hulu-shows
+5.  Netflix:  https://www.kaggle.com/shivamb/netflix-shows?select=netflix_titles.csv
 
 Steps:
 
@@ -27,8 +27,6 @@ Steps:
 3.  Analyze the CSVs to determine common values to create SQL tables.
 - Names/Titles
 - Genre
-- Motion Picture Association Rating
-- Year of Original Release
 - User Rating/IMDB Rating
 
 ## Transform
@@ -38,7 +36,6 @@ Steps:
 1.  Rename the columns in each DataFrame for consistency and to define SQL tables.
 2.  Drop the unnecessary columns from each DataFrame.
 3.  Convert the values in each DataFrame for consistency.
-4.  Merge Netflix DataFrames.
 
 ## Load
 
