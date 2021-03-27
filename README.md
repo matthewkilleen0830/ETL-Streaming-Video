@@ -32,7 +32,7 @@ Our team members:
 
 ### Configure User Access
 
-- Update the config file called "TAconfig.py" with user pgAdmin4 password (TAconfig.py is already added to .gitignore) 
+- Update the config file called "TAconfig.py" with user pgAdmin4 password and add TAconfig.py to .gitignore 
 
 ### Database Creation
 
