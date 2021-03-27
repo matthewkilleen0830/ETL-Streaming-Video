@@ -2,7 +2,7 @@
 
 ![Resources](Resources/streaming.jpg)
 
-Our project looks at the ETL process of the top video streaming services.  We aim to create a database with (4) tables, each consisting of television shows from popular platforms such as Amazon Prime, Disney Plus, Hulu, and Netflix.  Since each provider has different titles with little to no overlap, our objective is to create a relational database for those who are subscribed to all of them to have the ability to run queries with specified parameters to find something to watch and where. 
+Our project looks at the ETL process of the top video streaming services. We aim to create a database with (1) aggregated table, each consisting of television shows from popular platforms such as Amazon Prime, Disney Plus, and Hulu. Since each provider has different titles with little to no overlap, our objective is to create a relational database for those who are subscribed to all of them to have the ability to run filtered queries to find something to watch and where. 
 
 
 ## Team
@@ -12,37 +12,41 @@ Our team members:
 - Laura Hertzog
 - Matt Killeen
 
-## Extract
-Original Data Sources:
+## Steps to Re-Create Database
 
-1.  Amazon Prime TV Shows:  https://www.kaggle.com/nilimajauhari/amazon-prime-tv-shows
-2.  Disney Plus Shows:  https://www.kaggle.com/unanimad/disney-plus-shows
-4.  Hulu:  https://data.world/chasewillden/top-1-000-most-popular-hulu-shows
-5.  Netflix:  https://www.kaggle.com/shivamb/netflix-shows?select=netflix_titles.csv
+### Clone Repo to Local Directory
 
-Steps:
+- Navigate to https://github.com/matthewkilleen0830/etl-project
+- Find a place to clone the project files
+- Clone the repo to your local folder 
+- Open a terminal or Git Bash window
+- Copy the SSH key from Git Hub to your clipboard 
+- Run "clone [ctrl or cmd + p]"
+- Close the terminal or Git Bash
 
-1.  Download all datasets as CSVs into a folder called "Resources."
-2.  Read each CSV into DataFrames, respectively.
-3.  Analyze the CSVs to determine common values to create SQL tables.
-- Names/Titles
-- Genre
-- User Rating/IMDB Rating
+### Open Jupyter Notebook
 
-## Transform
+- Open a terminal or Git Bash window from the cloned repo
+- Execute the code "source activate PythonData"
+- Execute the code "jupyter notebook"
 
-Steps:
+### Configure User Access
 
-1.  Rename the columns in each DataFrame for consistency and to define SQL tables.
-2.  Drop the unnecessary columns from each DataFrame.
-3.  Convert the values in each DataFrame for consistency.
+- Update the config file called "TAconfig.py" with user pgAdmin4 password (TAconfig.py is already added to .gitignore) 
 
-## Load
+### Database Creation
 
-We chose pgAdmin4/postgreSQL to create our SQL tables to load our extracted data into.
+- Open pgAdmin4
+- Create a new database called "VideoStreamServices"
+- Activate the database by selecting it
+- Open Query Tool
+- Open the SQL file "table_schemata.sql" 
+- Run the code to establish the table
 
-Steps:
+### Load Database with Data
 
-1.  Create SQL tables using columns from cleaned DataFrames.
-2.  Create engine to connect to our local database.
-3.  Confirm data has been added by querying each table.
+- Open etl_notebook.ipynb
+- Under Kernel select "clear and restart all"
+- Run all notebook cells
+- Review documentation as CSV files are extracted, transformed, and loaded into SQL
+- Run filtered queries to find a show to watch on Amazon Prime, Disney Plus, or Hulu
