@@ -20,7 +20,7 @@ Our team members:
 - Select a local directory to clone the repo and project files.
 - Open a terminal or Git Bash window.
 - Copy the SSH key from GitHub to your clipboard. 
-- Execute the code "git clone <paste copied SSH key here>".
+- Execute the code "git clone [paste copied SSH key here]".
 - Close the terminal or Git Bash window.
 
 
