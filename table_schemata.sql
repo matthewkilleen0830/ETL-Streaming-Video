@@ -12,5 +12,5 @@ CREATE TABLE streamingshows (
     user_rating FLOAT not null
 );
 
--- Query all columns from table streamingshows
+-- Query all columns from table streamingshows (do not run until database has been loaded from jupyter notebook)
 SELECT * FROM streamingshows;
